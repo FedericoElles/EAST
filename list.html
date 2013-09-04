@@ -1,0 +1,80 @@
+
+<div class=unit>
+  <div class=input>
+    <input type="text" ng-model="search" class="search-query" placeholder="Search">
+  </div>
+</div>
+
+<style>
+  .span_number{
+    float:right;
+    min-width:32px;
+    margin-left:2px;
+    margin-right:2px;
+  }
+
+ .grey{
+   color:#aaa;
+ }
+
+ .pointer{
+    cursor:pointer;
+ }
+
+  .td_number{
+    width:72px;
+    min-width:72px;
+  }
+
+</style>
+
+
+
+<table>
+  <tbody>
+  <tr class="td_underscore" ng-repeat="project in projects | filter:search | orderBy:'name'">
+    <td class="pointer" onClick=location.href="#/edit/{{project._id}}">
+      <p>{{project.name}}</p>
+      <detail >
+        <span class="aDarkGrey" ng-show="project.lastSaw>-1"> Last saw:
+          <span ng-show="project.lastSaw==0">Today</span>
+          <span ng-show="project.lastSaw==1">Yesterday</span>
+          <span ng-show="project.lastSaw>1">{{project.lastSaw}} days ago</span>
+        </span>
+        <span class="aDarkGreen" ng-show="project.weekday>-1"> Next episode
+          <span ng-show="project.nextEpisode==0">today</span>
+          <span ng-show="project.nextEpisode==1">tomorrow</span>
+          <span ng-show="project.nextEpisode>1"> on {{weekdays[project.weekday]}} (in {{project.nextEpisode}} days)</span>
+          <span ng-show="project.nextEpisode<0"> on {{weekdays[project.weekday]}} (in {{project.nextEpisode+7}} days)</span>
+        </span>
+
+      </detail>
+
+    </td>
+    <td class="td_number" onClick=location.href="#/edit/{{project._id}}">
+      <span class="alone span_number"><f class=grey>E</f>{{project.episode}}</span>
+      <span ng-show="project.episode < 51" class="alone span_number"><f class=grey>S</f>{{project.season}}</span>
+    </td>
+    <td class="ts42">
+      <a class="actionicon " ng-click="project.episode = project.episode +1"><i class="icon-plus"></i></a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+  
+  <div ng-show="!projects.length" class=unit>
+    <span class=alone>Start by adding a new show</span>
+  </div>
+
+
+  <div class=unit>
+    <a class=action href="#/new/{{search}}"><i class="icon-plus-sign"></i> Add New Show</a>
+  </div>
+
+  <div class=section_header>
+    Bonus feature
+  </div>
+
+  <div class=unit>
+    <a class=action href="#/tastekid"><i class="icon-lightbulb"></i> Suggest new shows</a>
+  </div>

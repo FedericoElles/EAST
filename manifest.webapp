@@ -1,0 +1,22 @@
+{
+    "version": "1.0.0",
+    "name": "EAST",
+    "description": "Episode and Season Tracker.",
+    "launch_path": "/EAST/index.html",
+    "appcache_path": "/EAST/app.manifest",
+    "icons": {
+        "16":  "/EAST/img/icons/east-16.png",
+        "48":  "/EAST/img/icons/east-48.png",
+        "128": "/EAST/img/icons/east-128.png",
+        "60":  "/EAST/img/icons/east-60.png",
+        "256": "/EAST/img/icons/east-256.png"        
+    },
+    "developer": {
+        "name": "Federico Elles",
+        "url": "https://github.com/FedericoElles"
+    },
+    "installs_allowed_from": ["*"],
+    "locales": {},
+    "default_locale": "en",  
+    "permissions": {}
+}

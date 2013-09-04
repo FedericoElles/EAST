@@ -1,0 +1,140 @@
+
+<style>
+  input[type='number']{
+    text-align:center;
+  }
+
+  .east_td_number{
+    text-align:center;
+  }
+
+  .east_td_number div{
+    display:inline-block;
+  }
+
+  .east_td_number a{
+    display:inline-block;
+    vertical-align: top;
+  }
+
+  .east_td_number .input{
+    width:50px;
+  }
+
+</style>
+
+<form name="myForm">
+
+
+  <table class="control-group" ng-class="{error: myForm.name.$invalid}">
+    <tr>
+      <td width="30%">
+        <p>Name</p>
+        <!--<span ng-show="myForm.name.$error.required" class="help-inline">*</span>-->
+      </td>
+      <td width="70%">
+          <div class="input">
+            <input placeholder="Enter show name" type="text" name="name" ng-model="project.name" required>
+          </div>
+      </td>
+     
+    </tr>
+    <tr ng-show="project.updated">
+      <td>
+        <p>Updated</p>
+      </td>
+      <td>
+          <p>{{project.updated | date:longDate}}</p>
+      </td>
+     
+    </tr>
+  </table>
+
+
+  <table>
+    <div  class="control-group" ng-class="{error: myForm.season.$invalid}">
+    <tr>
+      <td width="30%">
+         <p>Season</p>
+      </td>
+      <td width="70%" class=east_td_number>
+        <a class=actionicon ng-click="project.season= project.season-1"><i class="icon-minus"></i></a>
+        <div class="input">
+          <input min="1" type="number" name="season" ng-model="project.season" required>
+        </div>
+        <a class=actionicon ng-click="project.season= project.season+1"><i class="icon-plus"></i></a>
+      </td>
+    </tr>
+    </div>
+    <tr class="control-group" ng-class="{error: myForm.episode.$invalid}">
+      <td>
+        <p>Episode</p>
+      </td>
+      <td class=east_td_number>
+        <a class=actionicon ng-click="project.episode = project.episode -1"><i class="icon-minus"></i></a>
+        <div class="input">
+          <input min="1" type="number" name="episode" ng-model="project.episode" required>
+        </div>
+        <a class=actionicon ng-click="project.episode = project.episode +1;increaseEpisode()"><i class="icon-plus"></i></a>
+      </td>
+    </tr>
+
+  </table>
+
+ 
+  <div ng-show="project.episode>9" class=unit>
+    <a class=action ng-click="nextSeason()" href=""><i class="icon-fast-forward"></i>Set to next season</a>
+  </div>
+
+  <div ng-show="scheduling==false" class=unit>
+    <a class=action ng-click="scheduling=true;project.weekday=0" href=""><i class="icon-time"></i>Add schedule</a>
+  </div>
+
+  <div ng-show="scheduling==true">
+
+  <div class=section_header>Schedule</div>
+  <table>
+    <div>
+    <tr>
+      <td style="padding-right:0px;">
+         <p>Weekday</p>
+      </td>
+      <td  class=east_td_number>
+        <a class=actionicon ng-click="prevDay()"><i class="icon-minus"></i></a>
+        <p style="width:95px;display:inline-block;">{{days[project.weekday]}}</p>
+        <!-- <div class="input"><input type="number" ng-model="project.weekday"></div> -->
+        <a class=actionicon ng-click="project.weekday= (project.weekday+1)%7"><i class="icon-plus"></i></a>
+      </td>
+    </tr>
+    </div>
+  </table>
+
+  <div class=unit>
+    <a class=action ng-click="scheduling=false;project.weekday=-1" href=""><i class="icon-time"></i>Remove schedule</a>
+  </div>
+
+  </div>
+
+  <div class=unithalf>
+  </div>
+
+  <div class=unit>
+  <table>
+  <tr>
+    <td width="33%" >
+      <button ng-click="save()" ng-disabled="isClean() || myForm.$invalid"
+          class="button">Save</button>
+    </td>
+
+    <td width="33%" >
+      <button ng-click="destroy()"
+          ng-show="project._id" class="button">Delete</button>
+    </td>
+
+    <td width="33%" >
+      <a class="button" href="#/" class="button ">Cancel</a>
+    </td>
+  </tr>
+  </table>
+  </div>
+</form>

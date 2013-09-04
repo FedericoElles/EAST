@@ -1,0 +1,51 @@
+<!doctype html>
+<html ng-app="project">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1, user-scalable=no">
+    <title>EAST</title>
+    <script src="jquery.min.js"></script>
+
+    <script src="angular.min.js"></script>
+    <script src="android.js"></script>
+
+    <script src="project.js"></script>
+
+
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+  </head>
+  <body class=ngandroid>
+
+<div id=actionbar class=dark>
+  <div class=back><i class="icon-angle-left"></i></div>
+  <div class=icon >
+    <img src="img/icons/east-96.png">
+  </div>
+  <div class=title xtitle="My Shows"></div>
+  <div class=menu></div>
+</div>
+
+<div class=page id=page_main>
+    <div ng-view></div>
+</div>
+
+
+<script>
+
+  $(function(){
+    actionbar.cbNotAvailable = function(){
+      //location.href = 'http://www.test.de' //image
+    }
+    actionbar.init() 
+
+  })
+  
+
+</script>
+
+  </body>
+</html>

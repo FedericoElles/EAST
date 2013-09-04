@@ -1,0 +1,31 @@
+  <div class=section_header>
+    Suggestions by Tastekid
+  </div>
+
+<table>
+  <tbody>
+  <tr class="td_underscore" ng-repeat="item in (filteredItems = (suggestions.results))">
+    <td class="pointer" ng-click="detail($index)">
+      <p>
+        {{item.Name}}
+        <span ng-show="item.added==true" class="aDarkGreen">Added!</span>
+      </p>      
+    </td>
+    <td  class="ts36" ng-click="add(item.Name,$index)">
+      <a ng-show="item.added!=true" class="actionicon "><i class="icon-plus-sign"></i></a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<div ng-show="filteredItems.length < 1 && nothingfound != true" class=unit>
+  <p>Loading...</p>
+</div>
+
+<div ng-show="nothingfound" class=unit>
+  <p>Sorry, no suggestions found.</p>
+</div>
+
+<div ng-show="!nothingfound" class=unit>
+  <a class=action href="" ng-click="reload()"><i class="icon-refresh"></i>Reload suggestions</a>
+</div>

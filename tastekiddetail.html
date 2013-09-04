@@ -1,0 +1,32 @@
+<div class=section_header>
+  Wikipedia
+</div>
+<p ng-show="suggestion.wTeaser">{{suggestion.wTeaser}}</p>
+<p ng-show="!suggestion.wTeaser">No Wikipedia description available.</p>
+
+<div ng-show="suggestion.wUrl" class=unit>
+  <a class=action ng-click="fritzapp.openBrowser('{{suggestion.wUrl}}')" href=""><i class="icon-globe"></i>Wikipedia article</a>
+</div>
+
+<div ng-show="suggestion.yID">
+  <div class=section_header>
+    Youtube
+  </div>
+  <img ng-click="yImage = (yImage+1)%4" style="width:100%;max-width:480px;" ng-src="http://img.youtube.com/vi/{{suggestion.yID}}/{{yImage}}.jpg">
+  <detail style="top:-10px">Preview Image {{yImage+1}} of 4 - Click for next image.</detail>
+  <div ng-show="suggestion.yUrl" class=unit>
+    <a class=action ng-click="fritzapp.openBrowser('{{suggestion.yUrl}}')" href=""><i class="icon-globe"></i>{{suggestion.yTitle|truncate:20}}</a>
+  </div>
+</div>
+
+<div class=section_header>
+  Options
+</div>
+<div ng-show="!suggestion.added">
+  <a class=action ng-click="add(suggestion.Name)" href=""><i class="icon-plus-sign"></i>Add to my shows</a>
+</div>
+<p ng-show="suggestion.added" class="aDarkGreen">Added!</p>
+
+<div>
+  <a class=action href="#/tastekid"><i class="icon-angle-left"></i>Back</a>
+</div>
