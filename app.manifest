@@ -24,6 +24,12 @@ http://eastapp.github.io/EAST/android.js
 
 #style sheets
 http://eastapp.github.io/EAST/style.css
+http://eastapp.github.io/EAST/font/FontAwesome.otf
+http://eastapp.github.io/EAST/font/fontawesome-webfont.eot
+http://eastapp.github.io/EAST/font/fontawesome-webfont.ttf
+http://eastapp.github.io/EAST/font/fontawesome-webfont.woff
+http://eastapp.github.io/EAST/css/font-awesome.css
+http://eastapp.github.io/EAST/css/font-awesome.min.css
 
 #style sheet images
 
