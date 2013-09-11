@@ -1,0 +1,37 @@
+CACHE MANIFEST
+
+#version 1.0 11-09-2013 21:29
+
+CACHE:
+
+#images
+http://eastapp.github.io/EAST/img/icons/east-16.png
+http://eastapp.github.io/EAST/img/icons/east-48.png
+http://eastapp.github.io/EAST/img/icons/east-256.png
+http://eastapp.github.io/EAST/img/icons/east-128.png
+http://eastapp.github.io/EAST/img/icons/east-60.png
+
+#internal HTML documents
+http://eastapp.github.io/EAST/tastekiddetail.html
+http://eastapp.github.io/EAST/tastekid.html
+http://eastapp.github.io/EAST/project.js
+http://eastapp.github.io/EAST/list.html
+http://eastapp.github.io/EAST/jquery.min.js
+http://eastapp.github.io/EAST/index.html
+http://eastapp.github.io/EAST/detail.html
+http://eastapp.github.io/EAST/angular.min.js
+http://eastapp.github.io/EAST/android.js
+
+#style sheets
+http://eastapp.github.io/EAST/style.css
+
+#style sheet images
+
+
+#javascript files
+http://eastapp.github.io/EAST/angular.min.js
+http://eastapp.github.io/EAST/js.js
+http://eastapp.github.io/EAST/app.js
+
+NETWORK:
+*
