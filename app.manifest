@@ -1,6 +1,6 @@
 CACHE MANIFEST
 
-#version 1.0 11-09-2013 21:29
+#version 1.0 12-09-2013 12:00
 
 CACHE:
 
@@ -14,24 +14,28 @@ http://eastapp.github.io/EAST/img/icons/east-60.png
 #internal HTML documents
 http://eastapp.github.io/EAST/tastekiddetail.html
 http://eastapp.github.io/EAST/tastekid.html
-http://eastapp.github.io/EAST/project.js
 http://eastapp.github.io/EAST/list.html
-http://eastapp.github.io/EAST/jquery.min.js
 http://eastapp.github.io/EAST/index.html
 http://eastapp.github.io/EAST/detail.html
-http://eastapp.github.io/EAST/angular.min.js
-http://eastapp.github.io/EAST/android.js
+
 
 #style sheets
 http://eastapp.github.io/EAST/style.css
+http://eastapp.github.io/EAST/font/FontAwesome.otf
+http://eastapp.github.io/EAST/font/fontawesome-webfont.eot
+http://eastapp.github.io/EAST/font/fontawesome-webfont.ttf
+http://eastapp.github.io/EAST/font/fontawesome-webfont.woff
+http://eastapp.github.io/EAST/css/font-awesome.css
+http://eastapp.github.io/EAST/css/font-awesome.min.css
 
 #style sheet images
 
 
 #javascript files
 http://eastapp.github.io/EAST/angular.min.js
-http://eastapp.github.io/EAST/js.js
-http://eastapp.github.io/EAST/app.js
+http://eastapp.github.io/EAST/project.js
+http://eastapp.github.io/EAST/android.js
+http://eastapp.github.io/EAST/jquery.min.js
 
 NETWORK:
 *
